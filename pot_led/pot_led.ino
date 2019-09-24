@@ -11,7 +11,7 @@ void setup() {
 void loop() {
   // read pot value & map to number of LEDs
   int led = analogRead(A2);
-  led = map(le  d, 0, 1023, 0, NUM_LEDS - 1);
+  led = map(led, 0, 1023, 0, NUM_LEDS -1);
   leds[led] = CRGB::Green;
   FastLED.show();
   leds[led] = CRGB::Black;
