@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "/Users/joedryden/Applications/Arduino.app/Contents/Java/tools/**",
+                "/Users/joedryden/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/**",
+                "/Users/joedryden/Documents/Arduino/**",
+                "/Users/joedryden/Applications/Arduino.app/",
+                "/Users/joedryden/Documents/Arduino/libraries"
+            ],
+            "forcedInclude": [
+                "/Users/joedryden/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/cores/arduino/Arduino.h"
+            ],
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks"
+            ],
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

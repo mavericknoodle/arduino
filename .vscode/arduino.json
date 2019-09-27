@@ -1,0 +1,6 @@
+{
+    "board": "arduino:avr:uno",
+    "port": "/dev/cu.usbmodem14201",
+    "sketch": "led_ring/loop/loop.ino",
+    "programmer": "AVRISP mkII"
+}
