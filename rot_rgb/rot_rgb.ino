@@ -70,6 +70,7 @@ void loop() {
 }
 
 void update_pos() {
+    aVal = digitalRead(encA);
     if (aVal != encA_last) { //knob is rotating
         if (digitalRead(encB) != aVal) { //encA changed first, movement is clockwise
             dirCW = true;
@@ -79,6 +80,7 @@ void update_pos() {
             encoder_pos --;
         }
     }
+    encA_last = encA;
 }
 void red() {
     encoder_pos = R;
