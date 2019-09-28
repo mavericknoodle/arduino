@@ -12,6 +12,7 @@ int encA_last;
 int aVal;
 int encoder_pos = 0;
 bool dirCW;
+bool mov;
 
 //function button
 int mode = 1; 
@@ -29,11 +30,16 @@ int pos;
 void setup() {
     pinMode (encA, INPUT);
     pinMode (encB, INPUT);
+    pinMode (LED_PIN, OUTPUT);
 
     encA_last = digitalRead(encA); //set start position
+
+    Serial.begin (9600);
 }
 
 void loop() {
+        Serial.println(R);
+    delay(100);
     //set mode
     if (button == HIGH) {
         if (mode == 3) {
@@ -53,6 +59,7 @@ void loop() {
             leds[1].setRGB(R, G, B);
             FastLED.show();
             red();
+            leds[pos] = CRGB::Black;
         }
         if (mode == 2) {
             leds[0] = CRGB::Green;
@@ -72,13 +79,18 @@ void loop() {
 void update_pos() {
     aVal = digitalRead(encA);
     if (aVal != encA_last) { //knob is rotating
-        if (digitalRead(encB) != aVal) { //encA changed first, movement is clockwise
+    mov = true;
+        if (digitalRead(encB) != aVal && mov == true) { //encA changed first, movement is clockwise
             dirCW = true;
             encoder_pos ++;
         } else { //encB changed first, movement is counter-clockwise
+            if (mov == true) {
             dirCW = false;
             encoder_pos --;
+            }
         }
+    } else {
+        mov = false;
     }
     encA_last = encA;
 }
