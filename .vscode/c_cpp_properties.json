@@ -5,9 +5,8 @@
             "includePath": [
                 "/Users/joedryden/Applications/Arduino.app/Contents/Java/tools/**",
                 "/Users/joedryden/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/**",
-                "/Users/joedryden/Documents/Arduino/**",
-                "/Users/joedryden/Applications/Arduino.app/",
-                "/Users/joedryden/Documents/Arduino/libraries"
+                "/Users/joedryden/Documents/Arduino/rot_rgb",
+                "/Users/joedryden/Documents/Arduino/libraries/Fast"
             ],
             "forcedInclude": [
                 "/Users/joedryden/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/cores/arduino/Arduino.h"

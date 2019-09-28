@@ -1,12 +1,19 @@
+//LED setup
 #include <FastLED.h>
 #define LED_PIN     7
 #define NUM_LEDS    16
 CRGB leds[NUM_LEDS];
+int dot;
 
+// Rotary encoder stuff
 int pinA = 2; //CLK
 int pinB = 3; //DT
 int pinA_last;
 int aVal;
+
+//timing
+int 
+
 bool clockwise = true;
 
 void setup() {
@@ -16,10 +23,10 @@ void setup() {
 
     pinA_last = digitalRead(pinA);
 }
-
+/*
 void loop() {
     
-    if clockwise = true {
+    if (clockwise = true) {
         for(int dot = 0; dot < NUM_LEDS; dot++) { 
             leds[dot] = CRGB::Red;
             FastLED.show();
@@ -43,5 +50,35 @@ void loop() {
 
             delay(100)
         }
+
+} */
+
+void loop() {
+    
+while (clockwise == true) {
+    leds[dot] = CRGB::Red;
+    FastLED.show();
+    leds[dot] = CRGB::Black;
+    
+    if (dot == NUM_LEDS - 1) {
+        dot = 0;
+    } else {
+        dot ++
+    }
+    delay
+}
+
+while (clockwise == false) {
+    leds[dot] = CRGB::Red;
+    FastLED.show();
+    leds[dot] = CRGB::Black;
+   
+    if (dot == 0) {
+        dot = NUM_LEDS - 1;
+    } else {
+        dot --
+    }
+    delay(5)
+}
 
 }
