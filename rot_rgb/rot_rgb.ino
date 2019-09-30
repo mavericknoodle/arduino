@@ -41,7 +41,7 @@ void loop() {
         Serial.println(R);
     delay(100);
     //set mode
-    if (button == HIGH) {
+    if (digitalRead(button) == HIGH) {
         if (mode == 3) {
             mode = 0;
         } else {
@@ -97,24 +97,24 @@ void update_pos() {
 void red() {
     encoder_pos = R;
     update_pos();
-    constrain(encoder_pos, 0, 255);
+    encoder_pos = constrain(encoder_pos, 0, 255);
     R = encoder_pos;
 }
 void green() {
     encoder_pos = G;
     update_pos();
-    constrain(encoder_pos, 0, 255);
+    encoder_pos = constrain(encoder_pos, 0, 255);
     G = encoder_pos;
 }
 void blue() {
     encoder_pos = B;
     update_pos();
-    constrain(encoder_pos, 0, 255);
+    encoder_pos = constrain(encoder_pos, 0, 255);
     B = encoder_pos;
 }
 void led_pos() {
     encoder_pos = pos;
     update_pos();
-    constrain(encoder_pos, 0, NUM_LEDS - 1);
+    encoder_pos = constrain(encoder_pos, 0, 255);
     pos = encoder_pos;
 }
